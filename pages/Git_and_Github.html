@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Git_and_GitHub</title>
+    </head>
+        <body>
+            <h3>What is Git?</h3>
+        <p>
+            Git is a version control system, it saves changes made to our code over time in a special data base called the repository, this means we can
+            look at who did what and when, this also makes it so multiple people can work on the same project with out passing files back and forth.
+        </p>
+            <h3>What is GitHub</h3>
+        <p>
+            GitHub is where you can upload files and store them in a "Git repository" and make changes or "commits" to your files
+        </p>
+            <h3>Creating a repository</h3>
+        <p>
+            After making a GitHub account, on the home page create a new repository by clicking on the "+" button in the top right corner and selecting
+            "New repository". Name your repository "git-test" and check "Add a README file", then create the repository by clicking "Create repository"
+            button at the bottom of the page. This will redirect you to your new repository on GitHub.
+        </p>
+        <p>
+            To get ready to copy(clone) this repository onto your local machine, click the green "Code" which should be to the right of the button
+            displaying the current branch. Then select the SSH option in the "Clone" section and copy the line below it. YOU MUST CLICK THE SSH OPTION
+            TO GET THE CORRECT URL!
+        </p>
+        <p>
+           CTRL+ALT+T to open terminal so we can create a new directory for all of our projects. Create a directory called repos with the mkdir <command>
+            in your home folder. Your home folder is represented by ~ (in linux ubuntu). Now it's time to clone our repository from GitHub into our newly
+            created repos directory with git clone followed by the URL you copied in the last step. The full command should look similar to:<br>
+            git clone git@github.come:USER-NAME/REPOSITORY-NAME.GIT<br>
+            That's it! You have successfully connected the repository you created on GitHub to your local machine, to test this cd into the new git_test
+            folder that was downloaded and then enter "git remote -v" in your terminal, you should see an output similar to the following (USER-NAME is
+            your github username)<br>
+            orgin git@github.com:USER-NAME/git_test.git(fetch)<br>
+            orgin git@github.come:USER-NAME/git_test.git(push)<br>
+        </p>
+            <h3>Using the Git Workflow</h3>
+        <p>
+            Create a new file in the git_test folder called "hello_world.txt" with the touch command. Type git status in your terminal, in the output
+            your hello_world.txt file should be shown with a red text as well as listed in a section titled "Untracked files" this means that the file
+            isn't staged yet. Type "git add hello_world.txt" to add it to the staging area in Git. The staging area is part of the two-step process for making
+            a commit in Git. The staging area is like a waiting room for your changes until you commit them. Now type "git status" again. The output file should 
+            be in green and in a section titled "Changes to be committed" which means that this file is now in the staging area. Type "git commit -m
+            "hello_world.txt" and then type "get status" once more, the output should now say "nothing to commit working tree clean" meaning your changes have
+            been committed, don't worry if you get a message that says "upstream is gone", this is normal and only shows when your cloned repository currently
+            has no branches. If you get "Your branch is ahead of 'orgin/main' by 1 commit" just means that you no have newer snapshots than what is on your remote
+            repository. Both of these will be resolved futher down this page. Last thing type "git log" and look at the output. You should see an entry for your
+            "Add hello_world.txt" commit. You will also see other details which include the author who made the commit, the date and time of when the commit was
+            made. If your terminal is stuck in a screen with (END) at the bottom just press "Q" to escape.
+        </p>
+            <h3>Modifing files</h3>
+        <p>
+            Open README.md in your text editor of choice. In this example we will open the directory in Visual Studio Code by using the command "code ."
+            inside your repository. Add "Hello Chad!" to a new line in README.md and save the file with CTRL+S. Go back to your terminal or press CTRL+`
+            to open VS code's built in terminal and type "git status" notice how the output is similar to when we created our hello_world.txt file before
+            adding it to the staging area, except the README.md file is listed in a section titled "Changes not staged for commit" this is silmilar to the
+            "Untacked files" section in that the file is not yet added to the staging area. Add README.md to the staging area with "git add README.md"
+            Can you guess what git status will output now? README.md will be displayed in green text in the section titled "Changes to be committed" meaning
+            README.md has been added to the staging area. The file hello_world.txt will not show up because it has not been modified since it was committed.
+            Open hello_world.txt and add some text to it, save it and stage it, you can use "git add ." to add all files in the current directory and all
+            subsequent directories to the staging area. Then type "git status" once more and everything should be in the staging area.
+        </p>
+            <h3>Finally Committing</h3>
+        <p>
+            Now all files are in the staging area and add a descriptive commit message. "git commit -m "Edit README.md and hello_world.txt" then 
+            type "git status" once again which will output the same "nothing to commit" message as when we previously made a commit. Take one last look at
+            your commit history by typing "git log" and you should now see three entries. For the final push to GitHub, type "git push" or to be specific
+            "git push origin main" since you are not dealing with another branch (other than main, more on this later) NOTE: IF IT SAYS "SUPPORT FOR PASSWORD
+            AUTHENTICATION WAS REMOVED PLEASE USE A PERSONAL ACCESS TOKEN INSTEAD" YOU FOLLOWED STEPS WRONG AND CLONED WITH HTTPS AND NOT SSH. Type "git status"
+            one last time it should output "Your branch is up to date with 'orgin/main'. nothing to commit, working tree clear". When you refresh your repository
+            page on GitHub, you should see the README.md and hello_world.txt files that you just pushed there from your local machine.
+        </p>
+            <h3>Cheat Sheet</h3>
+        <p>
+            Commands related to a remote repository:<br>
+            git clone git@github.com:USER-NAME/REPOSITORY-NAME.git<br>
+            git push or git push origin main (both accomplish the same goal in this context)<br>
+            <br>
+            Commands related to the workflow:<br>
+            git add .<br>
+            git commit -m "A message describing what you have done to make this snapshot different"<br>
+            <br>
+            Commands related to checking status or log history:<br>
+            git status<br>
+            git log<br>
+            The basic Git syntax is program | action | destination.<br>
+            For example, git add . is read as git | add | . where the preiod represents everything in the current directory<br>
+            git commit -m "message" is read as git | commit -m | "message"<br>
+            git status is read as git | status | (no destination)<br>
+            <br>
+            In VS Code you can use "git config --global core.editor "code --wait" to make it so you don't need to -m flag to make a commit message
+            instead it will pop up a window specifically for a commit message insuring you can't accidently commit without a message.
+         </p>
+        </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+    <html lang="eng">
+        <head>
+            <meta charset="UTF-8">
+            <title>Linux Ubuntu</title>
+        </head>
+    <body>
+        <h1>Linux Ubuntu Notes</h1>
+            <p>man "commanand" - will open a help page for any given command</p>
+
+        <h3>Basic File Navagation:</h3>
+            <p>
+        cd - brings you to the home directory<br>
+        cd name/ - will bring you to a specified directory <br>
+        pwd - print working driectory - tells you what directory you are currently in<br>
+        ls - list all files and directories in current directory<br>
+        ls -l - list long form<br>
+        ls -rtl - list long form but in reverse order (recently modified at the bottom)<br>
+        ls -a - list all including hidden<br>
+        . - will show hidden files and directories
+            </p>
+        <h3>Basic Text Files</h3>
+            <p>
+        echo "whatever you type" >foo.txt - will make a text file containing whatever you type<br>
+        nano - will make a text file that you can interact with while in terminal<br>
+        cat foo.txt - will print the context of foo.txt into the terminal<br>
+        cat foo.txt bar.txt - will combine the two text files, order will match input order<br>
+        touch "file name" - will create an empty text file with that name<br>
+        diff foo.txt bar.txt - will print the differences between the text files in terminal<br>
+        cp - copy - will copy a file to another directory<br>
+        mv - move - will move a file to another directory, if no output file will be renamed<br>
+        rv - remove - will delete a file, NO COMFIRMATION and CAN NOT BE UNDONE<br>
+            </p>
+        <h3>Shortcut Keys</h3>
+            <p>
+        ^ - CTRL<br>
+        CTRL+ALT+T - opens terminal<br>
+        ^l - clears terminal<br>
+        ^d - closes terminal<br>
+        ^c - canels current command<br>
+        ^+TAB - switches between open windows<br>
+        ^e - goes to end of command line<br>
+        ^a - goes to start of command line<br>
+        ^u - deletes everything in command line<br>
+        ^s - will save file<br>
+        TAB - auto fills commands where possible<br>
+        TABTAB - will list all possible names for autofill<br>
+            </p>
+        <h3>Wildcards</h3>
+            <p>
+        * - replaces zero or more characters ie. ls tes*.txt will show anthing that has tes....txt<br>
+        ? - replaces one character ie. tes?.txt will show test.txt, tesp.txt but not testing.txt<br>
+        [] - will match any chacters in [] ie. test[].txt will show test1.txt test2.txt ect.<br>
+            </p>
+        <h3>Updates</h3>
+            <p>
+                apt list -- upgradable - prints a list of things that can be updated
+                sudo apt update - updates the package list for any updates (always run before upgrading)
+                sudo apt upgrade - upgrades all outdated packages (may fail if sudo apt update was not ran)
+            </p>
+
+    </body>
+</html>
