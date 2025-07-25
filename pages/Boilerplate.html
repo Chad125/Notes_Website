@@ -1,0 +1,47 @@
+<!DOCTPYE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Boilerplate</title>
+    </head>
+<body>
+    <h3>What is a boilerplate?</h3>
+    <!-- Prior to this I was using <p> and </p> on seperate lines with content inbetween but I realized this just adds more lines to the code for no reason
+     so to clean it up a little I'm not doing that anymore keeping into old code as an example of improvment -->
+    <p>A boilerplate is the basic structure of a webpage, you can also think of it as a template. Every HTML page starts with a doctype declaration which
+        just tells the browser what version of HTML it should render. HTML5 is the newest version. Example:<br>
+        <!-- &lt; is "<" and &gt; is ">" remember &less than; &greater than; -->
+        &lt;!DOCTYPE html&gt;<br>
+    </p>With our doctype in place it tells the browser what programming language we are using but now what people language, so lets add that in with<br>
+    &lt;DOCTYPE html&gt;<br>
+    &lt;html lang="en"&gt;<br>
+    <br>
+    &lt;/html&gt;<br>
+    "en" is the code for english, this is primarily used for improving accessibility of the webpage allowing for assitive technologies like screen readers
+    to adapt accordingly to the language and use correct pronuncations. You may have noticed that there is a space between the 3rd and 5th lines, this
+    is becasue everything we use to build our webpage needs to be inbetween the html tags.</p>
+    <p>Now we have our root element and language established we can move onto our head element, our head element is always our first element added under
+        out html tag. The head element is where we put our important meta-information about our webpages, also important things required for our webpage
+        to render correctly. No content on our webpage should be in our head element. Example:<br>
+        &lt;head&gt;
+        <!-- <pre>TAB"text"</pre> allows TAB to be shown to make an indentation (must actually use TAB) -->
+        <pre>   &lt;meta charset="UTF-8"</pre>
+        <pre>   &lt;title&gt;Browser Tab Name&lt;title&gt;</pre>
+        &lt;/head&gt;<br>
+        meta charset? UTF-8? title? What are all these things?? Well meta charset=UTF-8 is our meta tag with a character set or charset encoding of our
+        webpage. We will get to what exactly the encoding is late on. Title is simpily what shows up in the Browser tab.</p>
+    <p>We have all of our meta information set up now we just need to actually put content on the webpage with a body element. Example:
+        &lt;body&gt;&lt;body&lt;<br>
+        We will add to this later on but for now have a look at what a full boilerplate looks like.</p>
+    <p>&lt;!DOCTYPE html&gt;<br>
+    &lt;html lang="en"&gt;<br>
+    <pre>   &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;title&gt;My First Website&lt;title&gt;
+            &lt;/head&gt;
+                &lt;body&gt;
+            *Content to be added*
+            &lt;/body&gt;
+    </pre></p>
+</body>
+</html>
